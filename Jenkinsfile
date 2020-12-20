@@ -1,12 +1,6 @@
 pipeline{
        agent any
        stages {
-               stage('Preparation') { // for display purposes
-                       steps {
-                                // Get some code from a GitHub repository
-                                // git 'https://github.com/sumi2222/mavenjenkindemo.git'
-                       }
-               }
                stage('Build') {
                        steps {
                                bat "mvn clean test"
