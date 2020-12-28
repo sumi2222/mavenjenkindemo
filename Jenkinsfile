@@ -8,7 +8,12 @@ pipeline{
                }
                stage('Package') {
                        steps {
-                                bat "mvn package"
+                               bat "mvn package"
+                       }
+               }
+               stage('Sonar Code Coverage') {
+                       steps {
+                                bat "mvn clean test sonar:sonar"
                        }
                }
                stage('Results') {
