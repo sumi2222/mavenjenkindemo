@@ -6,14 +6,14 @@ pipeline{
                                bat "mvn clean test"
                        }
                }
-               stage('Package') {
-                       steps {
-                               bat "mvn package"
-                       }
-               }
                stage('Sonar Code Coverage') {
                        steps {
                                 bat "mvn clean test sonar:sonar"
+                       }
+               }
+               stage('Package') {
+                       steps {
+                               bat "mvn package"
                        }
                }
                stage('Results') {
